@@ -105,7 +105,8 @@
 				<version>4.3.0</version>
 			</plugin>
 
-			<!-- ✅ Added FIX: maven-compiler-plugin with --add-opens (JDK17/Jenkins fix) -->
+			<!-- Added FIX: maven-compiler-plugin with -a... -->
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
