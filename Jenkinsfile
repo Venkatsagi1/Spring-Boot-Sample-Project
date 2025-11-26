@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your/repo.git'
+                git 'https://github.com/Venkatsagi1/Spring-Boot-Sample-Project.git'
             }
         }
 
