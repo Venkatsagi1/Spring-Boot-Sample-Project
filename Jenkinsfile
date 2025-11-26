@@ -1,34 +1,28 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven3'
-        jdk 'JDK17'
-    }
-
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Venkatsagi1/Spring-Boot-Sample-Project.git'
+                checkout scm
             }
         }
-
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                // Run Maven clean and package using Windows batch command
+                bat 'mvn clean package'
             }
         }
-
-        stage('Test') {
+        stage('Archive') {
             steps {
-                sh 'mvn test'
+                archiveArtifacts artifacts: '**\\target\\*.jar', fingerprint: true
             }
         }
+    }
 
-        stage('Deploy') {
-            steps {
-                sh './deploy.sh'
-            }
+    post {
+        always {
+            cleanWs()
         }
     }
 }
