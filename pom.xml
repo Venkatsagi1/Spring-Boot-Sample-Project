@@ -97,7 +97,8 @@
                 <version>4.3.0</version>
             </plugin>
 
-            <!-- FIXED: removed --add-opens arguments for Java 8 compatibility -->
+           <!-- FIXED: removed add-opens arguments for Java 8 compatibility -->
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
